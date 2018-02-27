@@ -8,7 +8,7 @@ def display_main_menu_get_choice():
     1. Edit Merchandise
     2. Edit Events
     3. Enter Sales
-    4. Helpful Info
+    4. Sales Info
     q. Quit Program
     ''')
     choice = input('Enter selection: ')
@@ -52,6 +52,19 @@ def display_enter_sales_menu():
     choice = input('Enter selection: ')
     return choice
 
+def display_info_menu():
+    '''Display menu, get choice'''
+    print('''
+            1. Whats the most sold product?
+            2. What festival sold the most crystals?
+            3. What festival sold the least crystals?
+            4. What product sold the least?
+            q. Quit Info Menu
+            ''')
+    choice = input('Enter selection: ')
+    return choice
+
+
 def display_products():
     '''Displays all products'''
     products = db.get_products()
@@ -78,6 +91,7 @@ def display_sales():
         Product Id: {}
         # Sold:     {}
         '''.format(sale[0], sale[1], sale[2], sale[3]))
+
 
 def add_product():
     '''Adds a product to products table'''
@@ -110,6 +124,7 @@ def delete_product():
     db.remove_product(product_id)
     message("Successfully removed {} from products".format(product[1]))
 
+
 def add_event():
     '''Adds an event to events table'''
     event_name = input("Event name: ")
@@ -140,6 +155,7 @@ def delete_event():
     db.remove_event(event_id)
     message("Successfully removed {} from events".format(event[1]))
 
+
 def add_sale():
     '''Adds a sale to the sales tables'''
     event_id = int(input("Enter event id: "))
@@ -156,11 +172,74 @@ def edit_sale():
     message("Sale Edited")
 
 def delete_sale():
-    '''Deltes a sale'''
+    '''Deletes a sale'''
     sale_id = int(input("Enter sale id: "))
     sale = db.get_sale_by_id(sale_id)
     db.remove_sale(sale_id)
     message("Sale Deleted")
+
+
+def most_sold_product():
+    '''Displays most sold product'''
+    max_product = 0
+    products_sold = db.most_sold_product()
+    for product in products_sold:
+        if product[1] > max_product:
+            max_product = product[1]
+            product_id = product[0]
+            most_sold = db.get_product_by_id(product_id)
+    message('''
+    Product: {}
+    id:      {}
+    sold:    {}
+    '''.format(most_sold[1], product_id, max_product))
+
+def festival_sold_most_crystals():
+    '''Displays the Festival that sold the most crystals'''
+    max_product = 0
+    events = db.festival_sold_most_crystals()
+    for event in events:
+        if event[1] > max_product:
+            max_product = event[1]
+            event_id = event[0]
+            event_info = db.get_event_by_id(event_id)
+    message('''
+        Event:    {}
+        Date:     {}
+        Location: {}
+        Sold:     {}
+        '''.format(event_info[1], event_info[2], event_info[3], max_product))
+
+def festival_sold_least_crystals():
+    '''Displays the Festival that sold the least crystals'''
+    max_product = 1000
+    events = db.festival_sold_most_crystals()
+    for event in events:
+        if event[1] < max_product:
+            max_product = event[1]
+            event_id = event[0]
+            event_info = db.get_event_by_id(event_id)
+    message('''
+            Event:    {}
+            Date:     {}
+            Location: {}
+            Sold:     {}
+            '''.format(event_info[1], event_info[2], event_info[3], max_product))
+
+def least_sold_product():
+    '''Returns least sold product'''
+    max_product = 1000
+    products_sold = db.most_sold_product()
+    for product in products_sold:
+        if product[1] < max_product:
+            max_product = product[1]
+            product_id = product[0]
+            least_sold = db.get_product_by_id(product_id)
+    message('''
+        Product: {}
+        Id:      {}
+        Sold:    {}
+        '''.format(least_sold[1], product_id, max_product))
 
 def message(msg):
     '''Display a message to the user'''

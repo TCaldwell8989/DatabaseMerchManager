@@ -1,5 +1,6 @@
-
+################
 # Main Program #
+################
 
 import ui
 
@@ -67,6 +68,22 @@ def handle_enter_sales_choice(choice):
     else:
         ui.message('Please enter a valid selection')
 
+def handle_info_choice(choice):
+    '''Handles choice from the Sales Info menu'''
+    if choice == '1':
+        ui.most_sold_product()
+    elif choice == '2':
+        ui.festival_sold_most_crystals()
+    elif choice == '3':
+        ui.festival_sold_least_crystals()
+    elif choice == '4':
+        ui.least_sold_product()
+    elif choice == 'q':
+        return
+    else:
+        ui.message('Please enter a valid selection')
+
+
 def edit_merchandise():
     '''Enter the Edit Merchandise Menu'''
     quit = 'q'
@@ -92,13 +109,23 @@ def enter_sales():
         handle_enter_sales_choice(choice)
 
 def helpful_info():
-    pass
+    '''Enter the Helpful Info Menu'''
+    quit = 'q'
+    choice = None
+    while choice != quit:
+        choice = ui.display_info_menu()
+        handle_info_choice(choice)
 
 def quit():
     '''Shutdown Program'''
     ui.message("Have a good day!")
     exit()
 
+
+
+####################
+# Start of Program #
+####################
 def main():
     print("Merchandise Manager")
 

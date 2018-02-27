@@ -120,3 +120,14 @@ def remove_sale(sale_id):
     with conn:
         c.execute("DELETE FROM sales WHERE id = :sale_id",
                   {'sale_id': sale_id})
+
+
+# Aggregate queries return results
+def most_sold_product():
+    c.execute("SELECT product_id, SUM(amount_sold) FROM sales GROUP BY product_id")
+    return c.fetchall()
+
+def festival_sold_most_crystals():
+    c.execute("SELECT event_id, SUM(amount_sold) FROM sales GROUP BY event_id")
+    return c.fetchall()
+
