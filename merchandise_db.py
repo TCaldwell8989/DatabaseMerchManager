@@ -10,13 +10,13 @@ c.execute("PRAGMA foreign_keys = 1")
 
 # Create products table, events table, and sales table
 c.execute("""CREATE TABLE IF NOT EXISTS products (
-          id INTEGER PRIMARY KEY, product_name TEXT, price REAL, quantity INTEGER , description TEXT)""")
+          id INTEGER NOT NULL PRIMARY KEY, product_name TEXT, price REAL, quantity INTEGER , description TEXT)""")
 
 c.execute("""CREATE TABLE IF NOT EXISTS events (
-          id INTEGER PRIMARY KEY, event_name TEXT, event_date TEXT, location TEXT)""")
+          id INTEGER NOT NULL PRIMARY KEY, event_name TEXT, event_date TEXT, location TEXT)""")
 
 c.execute("""CREATE TABLE IF NOT EXISTS sales (
-          id INTEGER PRIMARY KEY, event_id INTEGER, product_id INTEGER, amount_sold INTEGER,
+          id INTEGER NOT NULL PRIMARY KEY, event_id INTEGER, product_id INTEGER, amount_sold INTEGER,
           FOREIGN KEY(event_id) REFERENCES events(id),
           FOREIGN KEY(product_id) REFERENCES products(id))""")
 

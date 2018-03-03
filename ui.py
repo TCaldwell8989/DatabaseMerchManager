@@ -73,7 +73,7 @@ def display_products():
         for product in products:
             show_product = Product(product[1], product[2], product[3], product[4])
             print('''
-            Product Id:  {}{}'''.format(product[0], show_product))
+        Product Id:  {}{}'''.format(product[0], show_product))
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -85,7 +85,7 @@ def display_events():
         for event in events:
             show_event = Event(event[1], event[2], event[3])
             print('''
-            Event Id:   {}{}'''.format(event[0], show_event))
+        Event Id:   {}{}'''.format(event[0], show_event))
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -116,6 +116,9 @@ def add_product():
         product = Product(product_name, product_price, product_amount, product_desc)
         db.insert_product(product)
         message("Added Product")
+    except ValueError as ve:
+        message("Error: Please enter price and quantity in numeric amounts")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -127,6 +130,9 @@ def edit_price():
         new_price = float(input("New Price: "))
         db.update_price(product_id, new_price)
         message("Edited Price")
+    except ValueError as ve:
+        message("Error: Please enter price in numeric amounts")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -138,6 +144,9 @@ def edit_quantity():
         new_quantity = int(input("New quantity: "))
         db.update_quantity(product_id, new_quantity)
         message("Edited Quantity")
+    except ValueError as ve:
+        message("Error: Please enter quantity in numeric amounts")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -149,6 +158,9 @@ def delete_product():
         product = db.get_product_by_id(product_id)
         db.remove_product(product_id)
         message("Successfully removed {} from products".format(product[1]))
+    except ValueError as ve:
+        message("Error: Enter correct product id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -159,7 +171,7 @@ def add_event():
     try:
         event_name = input("Event name: ")
         event_date = input("Event date (MM/DD/YYYY): ")
-        event_location = input("Event location (city, st): ")
+        event_location = input("Event location (City, ST): ")
         event = Event(event_name, event_date, event_location)
         db.insert_event(event)
         message("Added Event")
@@ -174,6 +186,9 @@ def edit_event_date():
         new_date = input("New event date (MM/DD/YYYY): ")
         db.update_event_date(event_id, new_date)
         message("Edited Date")
+    except ValueError as ve:
+        message("Error: Enter correct event id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -185,6 +200,9 @@ def edit_event_location():
         new_location = input("New event location (city, st): ")
         db.update_location(event_id, new_location)
         message("Edited Location")
+    except ValueError as ve:
+        message("Error: Enter correct event id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -196,6 +214,9 @@ def delete_event():
         event = db.get_event_by_id(event_id)
         db.remove_event(event_id)
         message("Successfully removed {} from events".format(event[1]))
+    except ValueError as ve:
+        message("Error: Enter correct event id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -207,8 +228,18 @@ def add_sale():
         event_id = int(input("Enter event id: "))
         product_id = int(input("Enter product id: "))
         amount_sold = int(input("# Sold: "))
-        db.add_sale(event_id, product_id, amount_sold)
-        message("Sale Added")
+        product = db.get_product_by_id(product_id)
+        current_quantity = int(product[3])
+        if amount_sold > current_quantity:
+            message("Not enough {} in stock. Sale canceled".format(product[1]))
+        else:
+            db.add_sale(event_id, product_id, amount_sold)
+            new_quantity = current_quantity - amount_sold
+            db.update_quantity(product_id, new_quantity)
+            message("Sale Added, Quantity Updated")
+    except ValueError as ve:
+        message("Error: Enter event id and product id as numeric amount")
+        return
     except sqlite3.IntegrityError as er:
         message("Error: Event ID or Product ID not in database")
         return
@@ -222,6 +253,9 @@ def edit_sale():
         amount_sold = int(input("New # Sold: "))
         db.update_sale(sale_id, amount_sold)
         message("Sale Edited")
+    except ValueError as ve:
+        message("Error: Enter correct sale id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -233,6 +267,9 @@ def delete_sale():
         sale = db.get_sale_by_id(sale_id)
         db.remove_sale(sale_id)
         message("Sale Deleted")
+    except ValueError as ve:
+        message("Error: Enter correct sale id")
+        return
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -288,10 +325,10 @@ def festival_sold_least_crystals():
                 event_id = event[0]
                 event_info = db.get_event_by_id(event_id)
         message('''
-                Event:    {}
-                Date:     {}
-                Location: {}
-                Sold:     {}
+            Event:    {}
+            Date:     {}
+            Location: {}
+            Sold:     {}
                 '''.format(event_info[1], event_info[2], event_info[3], max_product))
     except sqlite3.Error as er:
         message("Error: Info not found in database")
