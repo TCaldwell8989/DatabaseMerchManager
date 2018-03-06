@@ -60,8 +60,6 @@ def handle_enter_sales_choice(choice):
     elif choice == '2':
         ui.add_sale()
     elif choice == '3':
-        ui.edit_sale()
-    elif choice == '4':
         ui.delete_sale()
     elif choice == 'q':
         return

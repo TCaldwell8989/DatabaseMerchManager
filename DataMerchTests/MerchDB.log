@@ -1,0 +1,376 @@
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Product deleted
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Event added
+INFO:root:Sale added
+INFO:root:Sale removed
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:Event added
+INFO:root:Event date updated
+INFO:root:Connected to database
+INFO:root:Created tables
+INFO:root:product added
+INFO:root:Price updated

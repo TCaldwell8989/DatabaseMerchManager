@@ -1,3 +1,4 @@
+from datetime import datetime
 from product import Product
 from event import Event
 import sqlite3
@@ -46,8 +47,7 @@ def display_enter_sales_menu():
     print('''
         1. Get All Sales
         2. Add Sale
-        3. Edit Sale
-        4. Delete Sale
+        3. Delete Sale
         q. Quit Enter Sales Menu
         ''')
     choice = input('Enter selection: ')
@@ -172,9 +172,14 @@ def add_event():
         event_name = input("Event name: ")
         event_date = input("Event date (MM/DD/YYYY): ")
         event_location = input("Event location (City, ST): ")
-        event = Event(event_name, event_date, event_location)
-        db.insert_event(event)
-        message("Added Event")
+        if validate(event_date):
+            event = Event(event_name, event_date, event_location)
+            db.insert_event(event)
+            message("Added Event")
+        else:
+            raise ValueError
+    except ValueError:
+        message("Error: Enter date in correct format")
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
@@ -184,8 +189,11 @@ def edit_event_date():
     try:
         event_id = int(input("Enter event id: "))
         new_date = input("New event date (MM/DD/YYYY): ")
-        db.update_event_date(event_id, new_date)
-        message("Edited Date")
+        if validate(new_date):
+            db.update_event_date(event_id, new_date)
+            message("Edited Date")
+        else:
+            raise ValueError
     except ValueError as ve:
         message("Error: Enter correct event id")
         return
@@ -242,22 +250,6 @@ def add_sale():
         return
     except sqlite3.IntegrityError as er:
         message("Error: Event ID or Product ID not in database")
-        return
-
-
-
-def edit_sale():
-    '''Edits a sale'''
-    try:
-        sale_id = int(input("Enter sale id: "))
-        amount_sold = int(input("New # Sold: "))
-        db.update_sale(sale_id, amount_sold)
-        message("Sale Edited")
-    except ValueError as ve:
-        message("Error: Enter correct sale id")
-        return
-    except sqlite3.Error as er:
-        message("Error: Info not found in database")
         return
 
 def delete_sale():
@@ -352,6 +344,17 @@ def least_sold_product():
     except sqlite3.Error as er:
         message("Error: Info not found in database")
         return
+
+# Referenced the validate(date_text) method at
+# https://stackoverflow.com/questions/16870663/how-do-i-validate-a-date-string-format-in-python
+def validate(event_date):
+    '''Run input validation on the user's date entry'''
+    try:
+        if event_date != datetime.strptime(event_date, "%m/%d/%Y").strftime('%m/%d/%Y'):
+            raise ValueError
+        return True
+    except ValueError:
+        return False
 
 def message(msg):
     '''Display a message to the user'''
